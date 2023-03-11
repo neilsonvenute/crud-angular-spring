@@ -8,12 +8,11 @@ import { Course } from './../model/course';
 })
 export class CoursesService {
 
+  private readonly API = '/assets/courses.json'
+
   constructor(private httpClient: HttpClient) { }
 
-  list(): Course[] {
-    return [
-      {_id: '1', name: 'Angular', category: 'front-end'},
-      {_id: '2', name: 'Java', category: 'Back-end'}
-    ];
+  list() {
+    return this.httpClient.get<Course[]>(this.API);
   }
 }
