@@ -10,8 +10,6 @@ import { Course } from './../model/course';
 })
 export class CoursesComponent implements OnInit {
 
-
-
   courses: Course[] = [];
 
   displayedColumns = ['name', 'category'];
