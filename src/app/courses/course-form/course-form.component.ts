@@ -26,15 +26,15 @@ export class CourseFormComponent {
   }
 
   onSubmit() {
-    this.service.save(this.form.value).subscribe(
-      (result) => console.log(result),
-      (error) => this.onError()
-    );
+    this.service.save(this.form.value).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => this.onError(),
+    });
   }
 
   onCancel() {}
 
-  private onError(){
-    this.snackBar.open('Erro ao salvar curso','',{duration: 5000})
+  private onError() {
+    this.snackBar.open('Erro ao salvar curso', '', { duration: 5000 });
   }
 }
